@@ -24,6 +24,6 @@ Starts = List.Generate(()=>0, each _ < total_records, each _ + 500),
 #"Expanded Custom.data" = Table.ExpandListColumn(#"Expanded Custom", "Custom.data"),
 #"Expanded Custom.data1" = Table.ExpandRecordColumn(#"Expanded Custom.data", "Custom.data", {"user_id", "org_id"}),
 #"Expanded user_id" = Table.ExpandRecordColumn(#"Expanded Custom.data1", "user_id", {"name"}, {"name"}),
-#"Expanded org_id" = Table.ExpandRecordColumn(#"Expanded user_id", "org_id", {"name"}, {"name.1"}),
+#"Expanded org_id" = Table.ExpandRecordColumn(#"Expanded user_id", "org_id", {"name"}, {"name.1"})
 in
 #"Expanded org_id"
